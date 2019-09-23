@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.miniproject">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".WaterDetailsActivity" />
+        <activity android:name=".WaterListActivity" />
+        <activity android:name=".insertWater" />
+        <activity android:name=".DrinkDetailsActivity" />
+        <activity android:name=".ViewDrinks" />
+        <activity android:name=".Drink1" />
+        <activity android:name=".DrinkView" />
+        <activity android:name=".DrinkUpdate" />
+        <activity android:name=".DrinkFirebaseHelper" />
+        <activity android:name=".Drink" />
+        <activity android:name=".FoodUpdate" />
+        <activity android:name=".delete_update" />
+        <activity android:name=".weightlistview" />
+        <activity android:name=".WeightMain" />
+        <activity android:name=".Drink3" />
+        <activity android:name=".ViewMeals" />
+        <activity android:name=".InsertFood" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignIn" />
+        <activity android:name=".FirstPage" />
+        <activity android:name=".weightViewShow"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">HealthDiary</string>
+
+    <string-array name="Meals">
+        <item>Breakfest</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snacks</item>
+    </string-array>
+
+    <string name="btnweight">Enter Weight</string>
+    <string name="btnshowlist">Show old weights</string>
+    <string name="txt1">Enter your Weight</string>
+    <string name="food">FOOD</string>
+    <string name="water">WATER</string>
+    <string name="drink">DRINK</string>
+    <string name="weight">WEIGHT</string>
+    <string name="update">UPDATE</string>
+    <string name="delete">DELETE</string>
+    <string name="add">ADD</string>
+    <string name="view">VIEW</string>
+    <string name="drinkname">DrinkName</string>
+    <string name="viewmeals">VIEW MEALS</string>
+    <string name="edit">EDIT</string>
+    <string name="title_activity_test">test</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+</resources>
