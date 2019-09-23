@@ -61,8 +61,16 @@ public class delete_update extends AppCompatActivity {
                     @Override
                     public void DataisUpdated() {
 
-                        Toast.makeText(delete_update.this,"Updated",Toast.LENGTH_LONG).show();
-                        finish();return;
+                        AlertDialog.Builder builder = new AlertDialog.Builder(delete_update.this);
+                        builder.setMessage("Are you want to sure Update Data").setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(delete_update.this,"Successfully Updated",Toast.LENGTH_LONG).show();
+                            }
+                        }).setNegativeButton("Cancel",null);
+
+                        AlertDialog alert = builder.create();
+                        alert.show();
 
                     }
 
@@ -89,32 +97,29 @@ public class delete_update extends AppCompatActivity {
                     @Override
                     public void DataIsInserted() {
 
-                    }
 
+                    }
                     @Override
                     public void DataisUpdated() {
 
                     }
 
+
                     @Override
                     public void DataIsDeleted() {
-                        Toast.makeText(delete_update.this,"Deleted",Toast.LENGTH_LONG).show();
-                        finish();return;
 
+                AlertDialog.Builder builder = new AlertDialog.Builder(delete_update.this);
+                builder.setMessage("Are you want to sure Delete Data").setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(delete_update.this,"Successfully Deleted",Toast.LENGTH_LONG).show();
+                            }
+                        }).setNegativeButton("Cancel",null);
+
+                AlertDialog alert = builder.create();
+                alert.show();
                     }
                 });
-//                AlertDialog.Builder builder = new AlertDialog.Builder(delete_update.this);
-//                builder.setMessage("Are you sur......!")
-//                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//
-//                            }
-//                        }).setNegativeButton("Cancel",null);
-//
-//                AlertDialog alert = builder.create();
-//                alert.show();
-
             }
         });
 

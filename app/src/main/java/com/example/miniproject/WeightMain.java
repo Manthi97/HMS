@@ -1,6 +1,8 @@
 package com.example.miniproject;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -65,7 +67,20 @@ public class WeightMain extends AppCompatActivity {
 
                         @Override
                         public void DataIsInserted() {
-                            Toast.makeText(WeightMain.this,"Successfully inserted",Toast.LENGTH_LONG).show();
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(WeightMain.this);
+                            builder.setMessage("Are you want to sure Insert Data").setPositiveButton("ok", new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Toast.makeText(WeightMain.this,"Successfully Inserted",Toast.LENGTH_LONG).show();
+                                }
+                            }).setNegativeButton("Cancel",null);
+                            AlertDialog alert = builder.create();
+                            alert.show();
+
+
+
 
                         }
 
