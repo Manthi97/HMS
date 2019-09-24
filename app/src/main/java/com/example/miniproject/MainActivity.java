@@ -51,12 +51,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openinsertWater() {
-
-        Intent intent = new Intent(this, insertWater.class);
-        startActivity(intent);
-    }
-
     public void openDrink1() {
 
         Intent intent = new Intent(this, Drink1.class);

@@ -9,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WaterDetailsActivity" />
-        <activity android:name=".WaterListActivity" />
-        <activity android:name=".insertWater" />
         <activity android:name=".DrinkDetailsActivity" />
         <activity android:name=".ViewDrinks" />
         <activity android:name=".Drink1" />

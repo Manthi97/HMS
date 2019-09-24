@@ -19,17 +19,11 @@ public class FirebaseDatabaseHelper {
     private DatabaseReference mReferenceFoods;
     private DatabaseReference mReferenceWeights;
     private DatabaseReference mReferenceWaters;
-    private List<Water> waters = new ArrayList<>();
     private List<Drink> drinks = new ArrayList<>();
     private List<Food> foods = new ArrayList<>();
     private List<Weight> weights = new ArrayList<>();
 
-    public interface DataStatusWater{
-        void DataIsLoaded(List<Water>waters, List<String>keys);
-        void DataIsInserted();
-        void DataIsUpdated();
-        void DataIsDeleted();
-    }
+
 
     public interface  DataStatusDrink{
         void DataIsLoaded(List<Drink>drinks, List<String>keys);
@@ -63,27 +57,7 @@ public class FirebaseDatabaseHelper {
 
     }
 
-    public void readWater(final DataStatusWater dataStatusWater){
-        mReferenceWaters.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                waters.clear();
-                List<String>keys= new ArrayList<>();
-                for(DataSnapshot keyNode : dataSnapshot.getChildren()){
-                    keys.add(keyNode.getKey());
-                    Water water = keyNode.getValue(Water.class);
-                    waters.add(water);
-                }
-                dataStatusWater.DataIsLoaded(waters,keys);
 
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
 
     public void readDrinks( final DataStatusDrink dataStatusDrink){
         mReferenceDrinks.addValueEventListener(new ValueEventListener() {
@@ -239,31 +213,5 @@ public class FirebaseDatabaseHelper {
         });
     }
 
-    public void addWater(Water water , final DataStatusWater dataStatusWater){
-       String key = mReferenceWaters.push().getKey();
-        mReferenceWaters.child(key).setValue(water).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                dataStatusWater.DataIsInserted();
-            }
-        });
-    }
 
-    public void updateWater(String key, Water water, final DataStatusWater dataStatusWater){
-        mReferenceWaters.child(key).setValue(water).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                dataStatusWater.DataIsUpdated();
-            }
-        });
-    }
-
-    public void DeleteWater (String key, final DataStatusWater dataStatusWater){
-        mReferenceWaters.child(key).setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                dataStatusWater.DataIsDeleted();
-            }
-        });
-    }
 }
