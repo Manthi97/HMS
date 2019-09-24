@@ -1,5 +1,7 @@
 package com.example.miniproject;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -72,7 +74,16 @@ public class FoodUpdate extends AppCompatActivity implements AdapterView.OnItemS
 
                     @Override
                     public void DataIsUpdated() {
-                        Toast.makeText(FoodUpdate.this,"Meal Updated",Toast.LENGTH_SHORT).show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(FoodUpdate.this);
+                        builder.setMessage("Are you want to sure Update Data").setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(FoodUpdate.this,"Successfully Updated",Toast.LENGTH_LONG).show();
+                            }
+                        }).setNegativeButton("Cancel",null);
+
+                        AlertDialog alert = builder.create();
+                        alert.show();
 
                     }
 
@@ -104,10 +115,19 @@ public class FoodUpdate extends AppCompatActivity implements AdapterView.OnItemS
 
                     @Override
                     public void DataIsDeleted() {
-                        Toast.makeText(FoodUpdate.this,"Delete Successfull",Toast.LENGTH_SHORT).show();
-                        finish();return;
+                        AlertDialog.Builder builder = new AlertDialog.Builder(FoodUpdate.this);
+                        builder.setMessage("Are you want to sure Delete Data").setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(FoodUpdate.this,"Successfully Deleted",Toast.LENGTH_LONG).show();
+                            }
+                        }).setNegativeButton("Cancel",null);
 
+                        AlertDialog alert = builder.create();
+                        alert.show();
                     }
+
+
                 });
             }
         });
